@@ -1,0 +1,25 @@
+.text-box{
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 30px;
+    
+}
+
+.center-text{
+    text-align: center;
+    font-family: Oswald;
+    font-size: 80px;
+    
+}
+.header2{
+    position: relative;
+    left: 50%;
+    bottom: 50px;
+}
+@media (max-width: 600px){
+    .text-box{
+        width: 95%;
+
+        font-size: 4vw;
+    }
+}
