@@ -6,15 +6,31 @@
 }
 
 .center-text{
+    margin-top: 0;
     text-align: center;
     font-family: Oswald;
     font-size: 80px;
+    border: 3px solid black;
+    padding: 10px;
+    background-color: rgb(213, 205, 205);
+    opacity: 0.8;
+    border-radius: 100%;
+    
     
 }
 .header2{
     position: relative;
     left: 50%;
     bottom: 50px;
+    color: rgb(70, 3, 3);
+    border: 2px solid whitesmoke;
+    background-color: antiquewhite;
+    border-radius: 10%;
+    font: italic 20px Arial, sans-serif;
+    padding: 10px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 50%;
 }
 @media (max-width: 600px){
     .text-box{
