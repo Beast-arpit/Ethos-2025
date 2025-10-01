@@ -17,17 +17,22 @@
     </div>
     
 
-    <div class="to-do-list-container">
-        <h2>TO-DO-LIST</h2>
+    <div class="current-location">
+        <h2>Current Location</h2>
 
-        <form action="submit-list" methon="post">
+        <form action="submit" methon="post">
 
-            <label for="task">Task: </label>
-            <input type="text" id="task" name="task" required><br> 
+            <label for="location">Enter your current location: </label>
+            <input type="text" id="task" name="task" required><br><br>
 
-            <button type="submit">Add Task</button>
+            <button type="add-location">Add location</button>
+            <button type="button" onclick="window.location.href='clear-location'">Clear location</button><br><br>
 
-            <button type="button" onclick="window.location.href='clear-task'">Clear Tasks</button>
+
+            <label for="current-status">current-status: </label>
+            <input type="text" id="current-status" name="current-status" required><br><br>
+            <button type="add-status">Add status</button>
+            <button type="button" onclick="window.location.href='clear-status'">Clear status</button><br><br>
         </form>
     </div>
 
