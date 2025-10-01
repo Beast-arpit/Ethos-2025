@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank Page</title>
+    <link rel="stylesheet" href="Studentpage.css">
+</head>
+<style>
+    body {
+        background-image: url('background.png');
+    }
+</style>
+<body>
+    <div class="title-box">
+        <h1>Student-Portal</h1>
+    </div>
+    
+
+    <div class="to-do-list-container">
+        <h2>TO-DO-LIST</h2>
+
+        <form action="submit-list" methon="post">
+
+            <label for="task">Task: </label>
+            <input type="text" id="task" name="task" required><br> 
+
+            <button type="submit">Add Task</button>
+
+            <button type="button" onclick="window.location.href='clear-task'">Clear Tasks</button>
+        </form>
+    </div>
+
+</html>
