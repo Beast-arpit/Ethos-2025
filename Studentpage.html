@@ -25,8 +25,17 @@
             <label for="location">Nearly current location: </label>
             <input type="text" id="task" name="task" required><br><br>
 
-            <button type="add-location">Add location</button>
+            <button onclick="getLiveLocation()">Add location</button>
+            
             <button type="button" onclick="window.location.href='clear-location'">Clear location</button><br><br>
+
+            <script src="location.js"></script>
+            <div id="output">
+                <p>Click "Add location" to view your live coordinates.</p>
+                <p>Latitude: <span id="latitude">N/A</span></p>
+                <p>Longitude: <span id="longitude">N/A</span></p>
+                <p id="status"></p>
+            </div>
 
 
             <label for="current-status">current-status: </label>
