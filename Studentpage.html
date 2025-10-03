@@ -23,11 +23,11 @@
         <form action="submit" methon="post">
 
             <label for="location">Nearly current location: </label>
-            <input type="text" id="task" name="task" required><br><br>
-
-            <button onclick="getLiveLocation()">Add location</button>
             
-            <button type="button" onclick="window.location.href='clear-location'">Clear location</button><br><br>
+
+            <button type="button" onclick="getLiveLocation()">Add location</button>
+            
+            <button type="button" onclick="clearPreviousData()">Stop Tracking</button><br><br>
 
             <script src="location.js"></script>
             <div id="output">

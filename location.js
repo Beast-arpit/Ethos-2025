@@ -57,3 +57,42 @@ function error() {
         
     }
 }
+
+
+// code to clear previous data
+
+function clearPreviousData() {
+
+    const latitudeSpan = document.getElementById('latitude');
+    const longitudeSpan = document.getElementById('longitude');
+    const status = document.getElementById('status');
+    const outputDiv = document.getElementById('output');
+
+    if (latitudeSpan) {
+        latitudeSpan.textContent = 'N/A';
+    }
+    if (longitudeSpan) {
+        longitudeSpan.textContent = 'N/A';
+    }
+    if (status) {
+        status.textContent = 'Data cleared.';
+    }
+    
+
+
+    localStorage.removeItem('latitude');
+    localStorage.removeItem('longitude');
+
+    sessionStorage.removeItem('latitude');
+    sessionStorage.removeItem('longitude');
+
+
+    const dataForms = document.getElementsByTagName('form');
+    if (dataForm) {
+        dataForm
+    }
+
+    console.log('Previous location data cleared.');
+
+
+}
