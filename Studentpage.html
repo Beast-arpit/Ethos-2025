@@ -48,8 +48,23 @@
 
             <script src="Student_alert.js"></script>
 
-            <button type="submit" class="Submit-button">Submit</button>
+            
         </form>
+
+        <form action="submit-comment" method="POST">
+            <label for="name">Your name (required):</label>
+            <input type="text" id="name" name="user_name"><br>
+
+            <label for="comment">Your Comment:</label><br><br>
+            <textarea id="comment" name="comment_body" rows="6" required></textarea>
+
+            <button type="submit">Post Comment</button>
+
+            
+
+        </form>
+
+        
     </div>
 
 </html>
