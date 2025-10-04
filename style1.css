@@ -1,57 +1,138 @@
-.text-box{
-    margin: 0 auto;
-    box-sizing: border-box;
-    padding: 30px;
-    
+/* Body and background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.center-text{
-    margin-top: 0;
+/* Header / Logo */
+.header {
     text-align: center;
-    font-family: Oswald;
-    font-size: 80px;
-    border: 1px solid black;
-    padding: 5px;
-    background-color: rgb(213, 205, 205);
-    opacity: 0.8;
-    border-radius: 10px;
-    
-    
+    padding: 40px 20px 20px;
+    color: #24303e;
 }
-.header2{
-    position: relative;
-    left: 50%;
-    bottom: 50px;
-    color: rgb(70, 3, 3);
-    border: 2px solid whitesmoke;
-    background-color: antiquewhite;
-    border-radius: 10%;
-    font: italic 20px Arial, sans-serif;
-    padding: 10px;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    width: 50%;
-}
-@media (max-width: 600px){
-    .text-box{
-        width: 95%;
 
-        font-size: 4vw;
-    }
+.header .logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
 }
-.Student-portal-box{
-    background-color: rgb(184, 179, 179);
+
+.header-text h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.header-text h3 {
+    margin: 10px 0 0;
+    font-weight: 400;
+    color: #495057;
+}
+
+/* Portal container */
+.portal-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+/* Individual portal boxes */
+.portal-box {
+    flex: 1 1 300px;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portal-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.portal-box img {
+    margin: 20px 0;
+    width: 60px;
+    height: 60px;
+}
+
+/* Portal buttons */
+.portal-access {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.portal-access:hover {
+    background-color: #218838;
+}
+
+/* Text inside portal boxes */
+.portal-box h2 {
+    margin-bottom: 15px;
+    color: #24303e;
+}
+
+.portal-box p {
+    color: #495057;
+    font-size: 14px;
+}
+.Student-portal-box {
+    background-color: aliceblue;
     opacity: 0.8;
-    padding: 20px;
+    font-size: larger;
+    font-weight: 500;
+    
 }
-.Staff-portal-box{
-    background-color: rgb(184, 179, 179);
+.Staff-portal-box {
+    background-color: aliceblue;
     opacity: 0.8;
-    padding: 20px;
+    font-weight: 500;
+    font-size: larger;
 }
-.IITG-Logo{
-    max-width: 20%;   
-    display: block;
-    
-    
+
+.center-text {
+    font-family: 'Georgia', serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding-bottom: 5px;
+    background-color: beige;
+    border-radius: 10px;
+}
+.header2 {
+    font-family: 'Georgia', serif;
+    font-size: 1em;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding-bottom: 5px;
+    background-color: beige;
+    border-radius: 10px;
 }
