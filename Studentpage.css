@@ -39,3 +39,83 @@
     border-radius: 12px;
     
 }
+
+.output {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    
+}  
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+label {
+    font-weight: bold;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+input[type="text"]:focus {
+    border: 2px solid #555;
+}
+form {
+    max-width: 400px;
+    margin: auto;
+}
+form br {
+    margin-bottom: 10px;
+}
+form button {
+    width: 48%;
+}
+form button + button {
+    float: right;
+}
+form .output {
+    clear: both;
+    margin-top: 20px;
+}
+form .output p {
+    margin: 5px 0;
+}
+form .output span {
+    font-weight: bold;
+}
+form .output p:first-child {
+    font-style: italic;
+    color: #666;
+}
+form .output p:nth-child(2) {
+    color: #e45000;
+}
+form .output p:nth-child(3) {
+    color: #1385a8;
+}
+
+

@@ -30,7 +30,7 @@
             <button type="button" onclick="clearPreviousData()">Stop Tracking</button><br><br>
 
             <script src="location.js"></script>
-            <div id="output">
+            <div class="output" id="output">
                 <p>Click "Add location" to view your live coordinates.</p>
                 <p>Latitude: <span id="latitude">N/A</span></p>
                 <p>Longitude: <span id="longitude">N/A</span></p>
@@ -40,8 +40,13 @@
 
             <label for="current-status">current-status: </label>
             <input type="text" id="current-status" name="current-status" required><br><br>
-            <button type="add-status">Add status</button>
-            <button type="button" onclick="window.location.href='clear-status'">Clear status</button><br><br>
+            <button onclick="updateStatus()"  type="add-status">Add status</button>
+            <button ondblclick="stopChecker()"  type="button">Clear status</button><br><br>
+
+            <p id="lastUpdateInfo">Last Status Update: Never</p>
+            <p id="checkerStatus">Checker: Initializing...</p>
+
+            <script src="Student_alert.js"></script>
 
             <button type="submit" class="Submit-button">Submit</button>
         </form>
