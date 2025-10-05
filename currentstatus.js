@@ -1,6 +1,6 @@
 document.getElementById('submit-btn').addEventListener('click', function() {
-            const statusTextarea = document.getElementById('status-input');
-            const statusContent = statusTextarea.value.trim();
+            const statusSelect = document.getElementById('status-input');
+            const statusContent = statusSelect.value;
 
             // Only proceed if the input is not empty
             if (statusContent) {

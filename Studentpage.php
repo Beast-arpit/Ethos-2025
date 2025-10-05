@@ -32,8 +32,17 @@ if(!isset($_SESSION['enrollment_no'])) {
 
     <div class="status-container">
         <h2>Submit Your Status</h2>
-        <input type="text" id="statusInput" placeholder="Enter Your current Status.">
+        <select id="status-input">
+            <option value="" disabled selected>Select your status</option>
+            <option>Available on Campus</option>
+            <option>In Transit (On-Campus)</option>
+            <option>Off-Campus (Commuting)</option>
+            <option>Off-Campus (Personal Time)</option>
+            <option>Emergency - Need Assistance</option>
+            <option>Check-In Complete (Safe)</option>
+        </select>
         <button onclick="submitStatus()">Submit</button>
+        <div id="status-feed"></div>
         
     </div>
 
