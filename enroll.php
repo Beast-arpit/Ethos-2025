@@ -1,3 +1,13 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
+
+
+
+
+
 <?php include "db.php"; ?>
 
 <?php
@@ -6,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    $stmt = $pdo->prepare("INSERT INTO table1 (enrollment_no, email, pass) VALUES (?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO enrollment (enrollment_no, email, pass) VALUES (?, ?, ?)");
     $stmt->execute([$enrollment_no, $email, $password]);
     echo "<p style='color:green'>✅ Enrollment successful!</p>";
 }
