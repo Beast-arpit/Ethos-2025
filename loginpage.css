@@ -1,54 +1,79 @@
-/* Body styling */
-.body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* === General Reset === */
+* {
     margin: 0;
     padding: 0;
-    background-color: rgb(221, 238, 91);
+    box-sizing: border-box;
+}
+
+/* === Body Styling === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e9f3ff 0%, #cfe4ff 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
-/* Login container */
+/* === Login Container === */
 .login-container {
+    background: #ffffff;
     width: 100%;
-    max-width: 400px;
-    padding: 40px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-}
-
-/* Title */
-.title {
+    max-width: 420px;
+    padding: 40px 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
     text-align: center;
-    color: #24303e; /* Primary dark color */
-    margin-bottom: 30px;
-    font-weight: 600;
-    font-size: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Form groups */
+.login-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 45px rgba(0, 0, 0, 0.2);
+}
+
+/* === IITG Logo === */
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* === Title === */
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #5f6c7b;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+/* === Form Group === */
 .form-group {
+    text-align: left;
     margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
+    font-weight: 600;
+    color: #2c3e50;
     margin-bottom: 8px;
-    font-weight: 500;
-    color: #495057;
 }
 
 .form-group input {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ced4da;
+    border: 1.5px solid #d0d7de;
     border-radius: 8px;
-    box-sizing: border-box;
-    font-size: 16px;
+    font-size: 15px;
+    color: #333;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
@@ -58,52 +83,68 @@
     outline: none;
 }
 
-/* Submit button */
+/* === Submit Button === */
 .submit-btn {
     width: 100%;
-    background-color: #28a745;
+    background: #004aad;
     color: white;
-    padding: 15px;
+    padding: 14px;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
-    transition: background-color 0.3s;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .submit-btn:hover {
-    background-color: #218838;
+    background: #003c8c;
+    transform: scale(1.02);
 }
 
-/* Error and success messages */
-.error-msg {
-    color: red;
-    margin-bottom: 15px;
-    font-weight: 500;
-    text-align: center;
-}
-
-.success-msg {
-    color: green;
-    margin-bottom: 15px;
-    font-weight: 500;
-    text-align: center;
-}
-
-/* Links below form */
+/* === Links === */
 .login-container p {
-    text-align: center;
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: 14px;
+    color: #444;
 }
 
 .login-container p a {
-    color: #007bff;
+    color: #004aad;
     text-decoration: none;
+    font-weight: 600;
     transition: color 0.3s;
 }
 
 .login-container p a:hover {
-    color: #0056b3;
+    color: #002d6b;
+}
+
+/* === Message Boxes === */
+.error-msg {
+    color: #d9534f;
+    background: #fdecea;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.success-msg {
+    color: #28a745;
+    background: #e6f9eb;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* === Responsive === */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 30px 20px;
+    }
+    .title {
+        font-size: 24px;
+    }
 }
