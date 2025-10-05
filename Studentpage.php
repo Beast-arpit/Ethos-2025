@@ -12,6 +12,7 @@ if(!isset($_SESSION['enrollment_no'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portal</title>
     <link rel="stylesheet" href="Studentpage.css">
+    <link rel="stylesheet" href="currentstatus.css">
 </head>
 <body>
     <div class="title-box">
@@ -29,6 +30,16 @@ if(!isset($_SESSION['enrollment_no'])) {
         <button type="button" onclick="clearPreviousData()">Clear Data</button>
     </div>
 
+    <div class="status-container">
+        <h3>What is your current status?</h3><br><br>
+
+        <textarea id="status-input" placeholder="Enter your current working status" rows="3"></textarea><br>
+        <button id="submit-btn">Post Status</button>
+
+        <script src="currentstatus.js" defer></script>
+
+        
+    </div>
     <!-- Pass PHP session to JS -->
     <script>
         const enrollmentNo = "<?php echo $_SESSION['enrollment_no']; ?>";
