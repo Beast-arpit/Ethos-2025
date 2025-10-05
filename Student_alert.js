@@ -1,65 +1,42 @@
-const LAST_UPDATA_KEY = 'lastStatusUpdateTimestamp';
+const TWELVE_HOURS = 12 * 60 * 60 * 1000; // 12 hours in milliseconds
 
-const OVERDUE_LIMIT_MS = 21600000;
+    window.onload = function () {
+      checkStatusReminder();
+    };
 
-const CHECKER_FREQUENCY_MS = 300000;
+    function checkStatusReminder() {
+      const lastSubmitted = localStorage.getItem('lastSubmittedTime');
+      const now = new Date().getTime();
 
-let checkerInterval;
+      if (!lastSubmitted) {
+        // No status ever submitted
+        alert("You haven't submitted a status yet. Please update your status.");
+      } else if (now - lastSubmitted > TWELVE_HOURS) {
+        // It's been more than 12 hours
+        alert("You haven't updated your status in over 12 hours. Please update it.");
+      }
+    }
 
+    function submitStatus() {
+      const status = document.getElementById('statusInput').value.trim();
 
-function checkForStatusOverdue() {
-    const lastUpdate = localStorage.getItem(LAST_UPDATA_KEY);
-    const currentTime = Date.now();
-    const infoElement = document.getElementById('lastUpdateInfo');
-
-    if(!lastUpdateTimestamp) {
-        infoElement.textContent = 'Last Status Update: Never. Please update status to begin tracking.';
+      if (status === "") {
+        alert("Please enter a status before submitting.");
         return;
+      }
+
+      // Save the submission time
+      localStorage.setItem('lastSubmittedTime', new Date().getTime());
+
+      // Clear input
+      document.getElementById('statusInput').value = "";
+
+      // Show thank you notification
+      const notification = document.getElementById('notification');
+      notification.style.display = 'block';
+
+      // Hide the notification after 3 seconds
+      setTimeout(() => {
+        notification.style.display = 'none';
+      }, 3000);
     }
-
-    const timeElapsed = currentTime - parseInt(lastUpdateTimestamp);
-    const hoursPassed = timeElapsed / 3600000;
-
-    infoElement.textContent = `Last Status Update: ${new Date(parseInt(lastUpdateTimestamp)).toLocaleString()}`;
-
-    if (timeElapsed >= OVERDUE_LIMIT_MS) {
-        alert(`❌ ERROR: Status Update Overdue! It has been ${hoursPassed.toFixed(2)} hours without an update. System requires immediate status confirmation.`);
-        document.getElementById('checkerStatus').textContent = "ERROR: STATUS OVERDUE!";
-    } else {
-        const remainingTime = OVERDUE_LIMIT_MS - timeElapsed;
-        const remainingHours = (remainingTime / 3600000).toFixed(2);
-        document.getElementById('checkerStatus').textContent = `Checker: OK. Time left: ${remainingHours} hours.`;
-    }
-}
-
-function updateStatus() {
-    const currentTime = Date.now();
-
-    localStorage.setItem(LAST_UPDATA_KEY, currentTime);
-
-    alert('✅ Status updated successfully. Timer reset for 6 hours');
-
-    checkForStatusOverdue();
-
-}
-
-function startChecker() {
-    if (checkerInterval) {
-        clearInterval(checkerInterval);
-    }
-
-    checkerInterval = setInterval(checkForStatusOverdue, CHECKER_FREQUENCY_MS);
-    document.getElementById('checkerStatus').textContent = "Checker: Active";
-
-    checkForStatusOverdue();
-}
-
-function stopChecker() {
-    if (checkerInterval) {
-        clearInterval(checkerInterval);
-        document.getElementById('checkerStatus').textContent = "Checker: Stopped";
-
-    }
-}
-
-document.addEventListener('DOMContentLoaded', startChecker);
