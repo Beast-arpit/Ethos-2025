@@ -1,3 +1,8 @@
+<?php
+// Any PHP code you need (e.g., session start, includes) can stay here
+// session_start();
+// include 'db.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +13,9 @@
 </head>
 <body>
 
-    <!-- Header / Logo -->
+    <!-- Header -->
     <header class="header">
-        <img src="IITG logo.png" alt="IITG Logo" class="logo">
+        <!-- Logo removed -->
         <div class="header-text">
             <h1>Collytics</h1>
             <h3>Know it, Report it, Stop it: Student Security</h3>
@@ -19,19 +24,19 @@
 
     <!-- Portal Options -->
     <main class="portal-container">
-        <div class="portal-box student-box">
+        <section class="portal-box student-box">
             <h2>Student Portal</h2>
-            <img src="graduating-student.png" alt="Student Logo">
+            <img src="graduating-student.png" alt="Graduating student icon">
             <p>Access the student portal to report issues and stay informed.</p>
-            <a href="login.php"><button class="portal-access">Access</button></a>
-        </div>
+            <a href="login.php" class="portal-access">Access</a>
+        </section>
 
-        <div class="portal-box staff-box">
+        <section class="portal-box staff-box">
             <h2>Staff Portal</h2>
-            <img src="teacher.png" alt="Staff Logo">
+            <img src="teacher.png" alt="Staff icon">
             <p>Staff members can manage reports and monitor student security.</p>
-            <a href="staff_login.php"><button class="portal-access">Access</button></a>
-        </div>
+            <a href="staff_login.php" class="portal-access">Access</a>
+        </section>
     </main>
 
 </body>
