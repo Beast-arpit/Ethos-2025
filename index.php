@@ -35,7 +35,7 @@
             <h2>Staff Portal</h2>
             <img src="teacher.png" alt="Staff icon">
             <p>Staff members can manage reports and monitor student security.</p>
-            <a href="staff_login.php" class="portal-access">Access</a>
+            <a href="/login.php" class="portal-access">Access</a>
         </section>
     </main>
 
