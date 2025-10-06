@@ -27,6 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="utf-8">
     <title>Enroll</title>
+    <link rel="stylesheet" href="enroll.css">
+    
 </head>
 <body>
     <h2>Enrollment Form</h2>

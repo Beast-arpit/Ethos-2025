@@ -1,0 +1,88 @@
+body {
+    background: url(background.jpg);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInBody 1s;
+}
+
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+form {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 8px 28px rgba(41, 103, 195, 0.15);
+    border-radius: 15px;
+    animation: slideUp 0.9s cubic-bezier(.45,.03,.52,.96);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(80px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+
+h2 {
+    color: #2760ff;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #9ab9ff;
+    border-radius: 7px;
+    font-size: 1rem;
+    background: #f5f8ff;
+    transition: box-shadow 0.3s;
+}
+
+input:focus {
+    box-shadow: 0 0 0 2px #2760ff66;
+    border-color: #2760ff;
+    outline: none;
+}
+
+button[type="submit"] {
+    background: linear-gradient(90deg, #2760ff 10%, #2399ff 100%);
+    color: #fff;
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    font-size: 1.07rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 10px #2760ff29;
+    transition: transform 0.2s cubic-bezier(.17,.67,.83,.67), box-shadow 0.2s;
+    margin-bottom: 8px;
+}
+
+button[type="submit"]:hover {
+    transform: scale(1.04);
+    box-shadow: 0 6px 18px #2760ff36;
+    background: linear-gradient(90deg, #2399ff 10%, #2760ff 100%);
+}
+
+a {
+    color: #2760ff;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: color 0.32s;
+}
+
+a:hover {
+    color: #1554e8;
+    text-decoration: underline;
+}
