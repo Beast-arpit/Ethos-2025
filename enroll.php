@@ -4,14 +4,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include 'db.php'; // Make sure $pdo (PDO connection) is set
+include 'db.php'; // Make sure $pdo is defined here
 
 $error = '';
 
-// Ensure csv folder exists
-$csvFolder = __DIR__ . '/csv';
+// === CSV folder setup ===
+$csvFolder = __DIR__ . '/csv'; // Saves CSV in 'csv' folder inside project
 if (!is_dir($csvFolder)) {
-    mkdir($csvFolder, 0777, true); // create folder if it doesn't exist
+    mkdir($csvFolder, 0777, true); // Create folder if it doesn't exist
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password_raw = trim($_POST['password'] ?? '');
 
+    // === Validate inputs ===
     if ($enrollment_no === '' || $email === '' || $password_raw === '') {
         $error = "Please fill all required fields.";
     } else {
@@ -32,11 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$enrollment_no, $email, $password_hashed]);
 
             // === 2️⃣ Save to CSV ===
-            $file = $csvFolder . 'csv/enrollment_data.csv';
+            $file = $csvFolder . '/enrollment_data.csv';
             $data = [$enrollment_no, $email, $password_hashed, date('Y-m-d H:i:s')];
 
             $is_new = !file_exists($file);
             $fp = fopen($file, 'a');
+            if (!$fp) {
+                die("Cannot open CSV file. Check folder permissions!");
+            }
             if ($is_new) {
                 fputcsv($fp, ['Enrollment No', 'Email', 'Password (Hashed)', 'Created At']);
             }
@@ -60,31 +64,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Enrollment</title>
-    <link rel="stylesheet" href="enroll.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Enrollment</title>
+<link rel="stylesheet" href="enroll.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Student Enrollment</h2>
+<div class="container">
+    <h2>Student Enrollment</h2>
 
-        <?php if ($error): ?>
-            <p style="color:red;"><?= htmlspecialchars($error) ?></p>
-        <?php endif; ?>
+    <?php if ($error): ?>
+        <p style="color:red;"><?= htmlspecialchars($error) ?></p>
+    <?php endif; ?>
 
-        <form method="POST" class="enroll-form">
-            <label>Enrollment No:</label>
-            <input type="text" name="enrollment_no" required><br>
+    <form method="POST" class="enroll-form">
+        <label>Enrollment No:</label>
+        <input type="text" name="enrollment_no" required><br>
 
-            <label>Email:</label>
-            <input type="email" name="email" required><br>
+        <label>Email:</label>
+        <input type="email" name="email" required><br>
 
-            <label>Password:</label>
-            <input type="password" name="password" required><br>
+        <label>Password:</label>
+        <input type="password" name="password" required><br>
 
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
 </body>
 </html>
