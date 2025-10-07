@@ -50,36 +50,7 @@ if(!isset($_SESSION['enrollment_no'])) {
     <script>
         const enrollmentNo = "<?php echo $_SESSION['enrollment_no']; ?>";
     </script>
-    <script>
-        document.getElementbyId("submitStatus").onclick = function() {
-            const status = document.getElementById("status-input").value;
-            if (status === "Emergency - Need Assistance") {
-                fetch('https://your-api-endpoint/sendemail', {
-                    method: 'POST', 
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        to: 'singharpit29416@gmail.com',
-                        subject: 'Emergency Alert: Student Needs Assistance',
-                        message: 'A student has reported an emergency and needs assistance. Please check the portal for details. '
-                        studentId: enrollmentNo
-                    })
-                })
-                .then(response => resopnse.json())
-                .then(data => {
-                    alert('Emergency notification sent succesfully.');
-                })
-                .catch(error => {
-                    console.error('Error sending email:', error);
-                    alert('Failed to send emergency notification.');
-                });
 
-            } else if (status && status !== "select your status") {
-                alert('Thankyou for submitting your current status.');
-            }
-        }
-    </script>
     <script src="location.js"></script>
     <script src="Student_alert.js"></script>
     <script src="studentpage.js"></script>
