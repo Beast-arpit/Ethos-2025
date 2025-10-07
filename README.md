@@ -11,3 +11,5 @@ and Use this detail to login for smooth use.
 
 Enrollment no. : 25et103
 Password : arpitsingh1
+
+User XAMPP server to access our sites properly.
