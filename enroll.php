@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$enrollment_no, $email, $password_hashed]);
 
             // === 2️⃣ Save to CSV ===
-            $file = $csvFolder . '/enrollment_data.csv';
+            $file = $csvFolder . 'csv/enrollment_data.csv';
             $data = [$enrollment_no, $email, $password_hashed, date('Y-m-d H:i:s')];
 
             $is_new = !file_exists($file);
